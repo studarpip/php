@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreconferenceRequest;
+use App\Http\Requests\InsertUpdateConferenceRequest;
 use App\Models\Conference;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -22,7 +22,7 @@ class ConferencesController extends Controller
         return view('conference.index', ['conferences' => $conferences->all()]);
     }
 
-    public function store(StoreconferenceRequest $request, Conference $conference): RedirectResponse
+    public function store(InsertUpdateConferenceRequest $request, Conference $conference): RedirectResponse
     {
         $validated = $request->validated();
 
@@ -51,7 +51,7 @@ class ConferencesController extends Controller
         return view('conference.edit', ['conference' => $conference]);
     }
 
-    public function update(StoreconferenceRequest $request, string $id): RedirectResponse
+    public function update(InsertUpdateConferenceRequest $request, string $id): RedirectResponse
     {
         $validated = $request->validated();;
 

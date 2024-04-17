@@ -4,7 +4,7 @@
         <div>
             <h4>{{ $conference['name'] }}</h4>
             <p>@lang('site.show-date')
-                : {{ \Carbon\Carbon::parse($conference['conference_date'])->format('F d, Y') }}</p>
+                : {{ \Carbon\Carbon::parse($conference['conference_date'])->format('F d, Y \a\t H:i') }}</p>
             <p>@lang('site.show-description'): {{ $conference['description'] }}</p>
             <p>@lang('site.show-address'): {{ $conference['address'] }}</p>
         </div>

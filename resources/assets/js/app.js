@@ -9,7 +9,9 @@ document.addEventListener('DOMContentLoaded', function () {
             disableInputs = true;
         } else if (!disableInputs) {
             flatpickr(item, {
-                minDate: "today"
+                minDate: "today",
+                enableTime: true,
+                time_24hr: true
             });
         }
     });
