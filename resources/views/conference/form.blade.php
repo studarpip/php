@@ -4,19 +4,19 @@
             <div class="card">
                 <div class="card-body">
                     <div class="mb-3">
-                        <label for="title-input" class="form-label">@lang('forms.title')</label>
-                        <input id="title-input" type="text" name="title"
-                               value="{{ old('title', optional($conference ?? null)->title) }}" class="form-control"
+                        <label for="name-input" class="form-label">@lang('forms.name')</label>
+                        <input id="name-input" type="text" name="name"
+                               value="{{ old('name', optional($conference ?? null)->name) }}" class="form-control"
                                @guest readonly @endguest>
-                        @error('title')
+                        @error('name')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="mb-3">
-                        <label for="content-input" class="form-label">@lang('forms.content')</label>
-                        <textarea id="content-input" name="content" class="form-control"
-                                  @guest readonly @endguest>{{ old('content', optional($conference ?? null)->content) }}</textarea>
-                        @error('content')
+                        <label for="description-input" class="form-label">@lang('forms.description')</label>
+                        <textarea id="description-input" name="description" class="form-control"
+                                  @guest readonly @endguest>{{ old('description', optional($conference ?? null)->description) }}</textarea>
+                        @error('description')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>

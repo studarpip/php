@@ -3,11 +3,7 @@
 @section('title', __('site.homepage_title'))
 
 @section('content')
-    <div class="container mt-5">
-        <div class="row">
-            <div class="col text-center">
-                <h1 class="display-4">@lang('site.homepage_title')</h1>
-            </div>
-        </div>
+    <div class="container text-center mt-5">
+        <h1 class="display-1">@lang('site.homepage_title')</h1>
     </div>
 @endsection

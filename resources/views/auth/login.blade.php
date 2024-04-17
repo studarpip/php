@@ -1,4 +1,6 @@
-<!doctype html>
+@extends('app')
+
+    <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -10,27 +12,27 @@
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
 </head>
 <body>
-
-<div class="container mt-5">
-    <div class="row justify-content-center">
-        <div class="col-md-5">
-            <form action="{{ route('login') }}" method="POST" class="card card-body">
-                @csrf
-                <input type="text" id="title-input" name="username"
-                       placeholder=@lang('site.username') value="{{ old('username') }}" class="form-control">
-                @error('username')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-                <input type="password" id="password-input" name="password"
-                       placeholder=@lang('site.password') value="{{ old('password') }}" class="form-control">
-                @error('password')
-                <small class="text-danger">{{ $message }}</small>
-                @enderror
-                <button type="submit" class="btn btn-primary">@lang('site.login_button')</button>
-            </form>
+@section('content')
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-5">
+                <form action="{{ route('login') }}" method="POST" class="card card-body">
+                    @csrf
+                    <input type="text" id="title-input" name="username"
+                           placeholder=@lang('site.username') value="{{ old('username') }}" class="form-control">
+                    @error('username')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                    <input type="password" id="password-input" name="password"
+                           placeholder=@lang('site.password') value="{{ old('password') }}" class="form-control">
+                    @error('password')
+                    <small class="text-danger">{{ $message }}</small>
+                    @enderror
+                    <button type="submit" class="btn btn-primary">@lang('site.login_button')</button>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-
+@endsection
 </body>
 </html>

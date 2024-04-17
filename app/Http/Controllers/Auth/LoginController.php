@@ -11,13 +11,13 @@ class LoginController extends Controller
 
     protected $redirectTo = '/';
 
-    public function username(): string
-    {
-        return 'username';
-    }
-
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
+    }
+
+    public function username(): string
+    {
+        return 'username';
     }
 }

@@ -12,15 +12,14 @@
 <div>
     <nav class="navbar navbar-dark bg-dark">
         <div class="container">
-            <!-- Logo on the left -->
             <a class="navbar-brand" href="{{ url('/') }}">@lang('site.logo')</a>
-            <!-- Links on the right -->
             <div class="ml-auto">
                 <a href="{{ url('/conferences') }}" class="btn btn-outline-primary">@lang('site.conferences')</a>
                 @guest
                     <a href="{{ route('login') }}" class="btn btn-primary">@lang('site.login')</a>
                 @else
-                    <a href="{{ route('logout') }}" id="logout-btn" class="btn btn-danger logout-btn">@lang('site.logout')</a>
+                    <a href="{{ route('logout') }}" id="logout-btn"
+                       class="btn btn-danger logout-btn">@lang('site.logout')</a>
                     <form action="{{ route('logout') }}" method="POST" id="logout-form" class="d-none">
                         @csrf
                     </form>
