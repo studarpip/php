@@ -13,7 +13,7 @@
 
 <div class="container mt-5">
     <div class="row justify-content-center">
-        <div class="col-md-6">
+        <div class="col-md-5">
             <form action="{{ route('login') }}" method="POST" class="card card-body">
                 @csrf
                 <input type="text" id="title-input" name="username"
