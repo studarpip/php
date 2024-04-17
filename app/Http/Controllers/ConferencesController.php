@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreconferenceRequest;
 use App\Models\Conference;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Routing\Controller;
-use App\Http\Requests\StoreconferenceRequest;
 use Illuminate\Support\Facades\Log;
 
 class ConferencesController extends Controller
@@ -22,22 +22,22 @@ class ConferencesController extends Controller
         return view('conference.index', ['conferences' => $conferences->all()]);
     }
 
-    public function create(): View
-    {
-        return view('conference.create');
-    }
-
     public function store(StoreconferenceRequest $request, Conference $conference): RedirectResponse
     {
         $validated = $request->validated();
 
         $conferenceItem = $conference->create($validated);
 
-        Log::info('Conference created', ['id' => $conferenceItem->id, 'title' => $conferenceItem->title]);
+        Log::info('Conference created', ['id' => $conferenceItem->id, 'name' => $conferenceItem->name]);
 
         $request->session()->flash('status', 'Conference created');
 
         return redirect()->route('conferences.show', ['conference' => $conferenceItem->id]);
+    }
+
+    public function create(): View
+    {
+        return view('conference.create');
     }
 
     public function show(int $id): View

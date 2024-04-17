@@ -10,8 +10,8 @@ return new class extends Migration {
     {
         Schema::create('conferences', function (Blueprint $table) {
             $table->id();
-            $table->text('title');
-            $table->text('content');
+            $table->text('name');
+            $table->text('description');
             $table->date('conference_date');
             $table->text('address');
             $table->timestamps();

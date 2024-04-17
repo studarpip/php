@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'title' => 'Title',
-    'content' => 'Content',
+    'name' => 'Name',
+    'description' => 'Description',
     'conference_date' => 'Conference Date',
     'address' => 'Address',
 ];
