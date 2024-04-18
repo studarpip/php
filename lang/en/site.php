@@ -3,7 +3,7 @@
 return [
     'login' => 'Login',
     'logout' => 'Logout',
-    'homepage_title' => 'Home page',
+    'homepage_title' => 'Home',
     'username' => 'Username',
     'password' => 'Password',
     'login_button' => 'Login',
